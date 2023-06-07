@@ -1,0 +1,114 @@
+<%- include("../Auth/authHeader") -%>
+
+<div class="ugf-covid covid-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-expand-md anfra-nav">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="assets/images/Logo/logo white.png"
+              class="main-logo"
+              width="130"
+              alt=""
+            />
+            <img
+              src="assets/images/Logo/isadora std regula font - Copy.png"
+              class="logo-2"
+              width="130"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="las la-bars"></i>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item">
+                <a
+                  class="nav-link nav-button"
+                  href="https://themeforest.net/item/anfra-questionnaire-form-wizard/29917051"
+                  >Purchase</a
+                >
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="pt100">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-lg-5 relative">
+          <div class="covid-tips">
+            <h3>Welcome To Goldpark Logistics</h3>
+            <div class="tips">
+              <div class="content">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque odit ipsam officia eaque? Sed placeat quasi consectetur
+                  exercitationem rerum? Doloremque.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-5 offset-xl-3 col-lg-6 offset-lg-1 p-sm-0">
+          <div class="covid-wrap">
+            <form action="/landing" method="post">
+              <div class="covid-test-wrap test-step active">
+                <h3 class="text-center">OPERATIONS</h3>
+                <div class="step-block">
+                  <div class="form-group">
+                    <input
+                      type="radio"
+                      name="operation"
+                      class="form-control"
+                      id="Inbound"
+                      value="inbound"
+                    />
+                    <label for="Inbound">INBOUND</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="radio"
+                      name="operation"
+                      value="outbound"
+                      class="form-control"
+                      id="outbound"
+                    />
+                    <label for="outbound">OUTBOUND</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="radio"
+                      name="operation"
+                      class="form-control"
+                      id="report"
+                      value="report"
+                    />
+                    <label for="report">REPORT</label>
+                  </div>
+                  <button type="submit" class="button">Next</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

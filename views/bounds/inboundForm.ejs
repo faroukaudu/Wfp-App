@@ -1,0 +1,402 @@
+<%- include("../partial/header") -%>
+
+<div class="ugf-bg ufg-main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 p-sm-0">
+        <div class="covid-wrap">
+          <div class="covid-header offset-lg-2 col-lg-8">
+            <h2>INBOUND Information</h2>
+            <span class="step-count"
+              ><span class="current-step">1</span>/<span class="total-step"
+                >4</span
+              ></span
+            >
+          </div>
+          <form action="/" method="post">
+            <div
+              class="covid-test-wrap ugf-form test-step active offset-lg-2 col-lg-8"
+            >
+              <div class="step-block">
+                <div class="input-block">
+                  <div class="form-group">
+                    <label for="batch-no">Batch NO.</label>
+                    <input
+                      type="text"
+                      name="batchno"
+                      id="batch-no"
+                      placeholder="Batch No."
+                      class="form-control"
+                    />
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">Date</label>
+                        <input
+                          type="text"
+                          name="date"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">Warehouse</label>
+                        <input
+                          type="text"
+                          id="state"
+                          placeholder="State"
+                          class="form-control"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-group">
+                    <label for="state">Refrence NO/OBD.</label>
+                    <input
+                      type="text"
+                      id="state"
+                      placeholder="State"
+                      class="form-control"
+                    />
+                  </div>
+                  <a href="#" class="button">Next Step &nbsp; &#10140;</a>
+                </div>
+              </div>
+            </div>
+            <div
+              class="covid-test-wrap ugf-form test-step offset-lg-2 col-lg-8"
+            >
+              <div class="step-block">
+                <div class="input-block">
+                  <div class="form-group">
+                    <div class="form-group">
+                      <label for="Date">Commodity</label>
+                      <input
+                        type="text"
+                        name="commodity"
+                        class="form-control"
+                        id="Date"
+                        placeholder="Commodity"
+                      />
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">Unit Weight</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">Quantity</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">Metri-ton</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">Activity</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                  <h4 style="text-align: center">Destination</h4>
+                  <div class="row">
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">From</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="Date">To</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="Date"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <a href="#" class="button">Next Step &nbsp; &#10140;</a>
+                  <a
+                    href="#"
+                    class="prev-btn"
+                    style="display: flex; justify-content: center"
+                    ><img
+                      src="assets/images/arrow-left-grey.png"
+                      alt=""
+                    />Previous</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="covid-test-wrap ugf-form test-step offset-lg-2 col-lg-8"
+            >
+              <div class="step-block">
+                <div class="input-block">
+                  <div class="form-group">
+                    <label for="state">Transporter / Supplier name</label>
+                    <input
+                      type="text"
+                      id="state"
+                      placeholder="State"
+                      class="form-control"
+                    />
+                  </div>
+
+                  <div class="row">
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputFname">Phone Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputFname"
+                          placeholder="e.g.  Smith"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputLname">Truck Plate No.</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputLname"
+                          placeholder="e.g.  Robert"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="remark">Driver Contact</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="inputLname"
+                      placeholder="Driver Contact"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="remark">Remark form</label>
+                    <textarea
+                      class="form-control"
+                      name=""
+                      id="remark"
+                      cols="30"
+                      rows="10"
+                    ></textarea>
+                  </div>
+
+                  <a href="#" class="button">Next Step &nbsp; &#10140;</a>
+                  <a
+                    href="#"
+                    class="prev-btn"
+                    style="display: flex; justify-content: center"
+                    ><img
+                      src="assets/images/arrow-left-grey.png"
+                      alt=""
+                    />Previous</a
+                  >
+                </div>
+              </div>
+            </div>
+            <div
+              class="covid-test-wrap ugf-form test-step col-lg-12"
+              style="background-color: #dde6ed; border: 1px solid #7e868b"
+            >
+              <div class="step-block">
+                <div class="row">
+                  <h4 class="text-center mb-5">PREVIEW</h4>
+                  <div class="input-block col-lg-6">
+                    <div class="form-group">
+                      <label for="batch-no">Batch NO.</label>
+                      <p>uuuu</p>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">Date</label>
+                          <p>3/03/2023</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">Warehouse</label>
+                          <p>WH364</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="state">Refrence NO/OBD.</label>
+                      <p>2435</p>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="Date">Commodity</label>
+                      <p>Beans</p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">Unit Weight</label>
+                          <p>20kg</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">Quantity</label>
+                          <p>10</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">Metri-ton</label>
+                          <p>120 mt</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">Activity</label>
+                          <p>Inbound</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="input-block col-lg-6">
+                    <div class="form-group">
+                      <label for="state">Transporter / Supplier name</label>
+                      <p>James Tanko</p>
+                    </div>
+
+                    <div class="row">
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="inputFname">Phone Name</label>
+                          <p>09045637273</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="inputLname">Truck Plate No.</label>
+                          <p>hw-66-rt-34</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    <div class="form-group">
+                      <label for="remark">Driver Contact</label>
+                      <p>09456374234</p>
+                    </div>
+                    <h4>Destination</h4>
+                    <div class="row">
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">From</label>
+                          <p>Kano</p>
+                        </div>
+                      </div>
+                      <div class="col-md-6 p-sm-0">
+                        <div class="form-group">
+                          <label for="Date">To</label>
+                          <p>Enugu</p>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="form-group">
+                      <label for="remark">Remark form</label>
+                      <p>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Aspernatur, ipsam.
+                      </p>
+                    </div>
+                  </div>
+                  <div class="input-block text-center">
+                    <div class="form-group">
+                      <div class="custom-checkbox">
+                        <input
+                          type="checkbox"
+                          class="custom-control-input"
+                          id="customControlValidation1"
+                          required
+                        />
+                        <label
+                          class="custom-control-label"
+                          for="customControlValidation1"
+                          >I accept the <a href="#">Terms & Conditions</a> and
+                          <a href="#">Privacy policy</a></label
+                        >
+                      </div>
+                    </div>
+                  </div>
+
+                  <button type="submit" class="btn">
+                    Submit &nbsp;
+                    <img src="assets/images/check.svg" alt="" />
+                  </button>
+                  <a
+                    href="#"
+                    class="prev-btn"
+                    style="display: flex; justify-content: center"
+                    ><img
+                      src="assets/images/arrow-left-grey.png"
+                      alt=""
+                    />Previous</a
+                  >
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partial/footer") -%>
