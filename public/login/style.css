@@ -8875,8 +8875,8 @@ ul {
   .checkbox
   input[type="checkbox"]:checked
   + label::before {
-  background-color: #ff0000;
-  border-color: #ff0000;
+  background-color: #267399;
+  border-color: #267399;
 }
 .fxt-template-layout22 .fxt-footer {
   text-align: center;

@@ -26,6 +26,9 @@ app.get("/landing", (req, res) => {
 app.get("/report", (req, res) => {
   res.render("bounds/report");
 });
+app.get("/submit", (req, res) => {
+  res.render("bounds/formComplete");
+});
 
 app.get("/auth", (req, res) => {
   res.render("Auth/auth");
@@ -46,6 +49,10 @@ app.post("/landing", (req, res) => {
 app.post("/login", (req, res) => {
   console.log(req.body.email, req.body.password);
   res.redirect("/auth");
+});
+
+app.post("/inbound", (req, res) => {
+  res.redirect("/submit");
 });
 app.post("/auth", (req, res) => {
   console.log(req.body.authcode);
