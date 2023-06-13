@@ -2,7 +2,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const lodash = require("lodash");
 const ejs = require("ejs");
-const { on } = require("nodemon");
 
 const app = express();
 app.use(express.static("public"));

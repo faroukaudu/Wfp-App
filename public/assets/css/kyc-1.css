@@ -133,11 +133,10 @@
   -ms-flex-flow: "Roboto", sans-serif;
   flex-flow: "Roboto", sans-serif;
   margin-right: 25px;
+  line-height: 17px;
+  text-align: right;
 }
 
-.navigation .nav-btns .back:hover {
-  color: #267399;
-}
 
 .navigation .nav-btns .get {
   background: #267399;
