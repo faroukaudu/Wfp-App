@@ -71,7 +71,7 @@ body {
 }
 p {
   margin: 0 0 20px 0;
-  color: #646464;
+  color: #000000;
 }
 h1,
 h2,
@@ -8539,13 +8539,14 @@ ul {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
+  background-image: url("/img/bg.jpg");
   margin: 0;
   padding: 0;
 }
 .fxt-template-layout22 .fxt-content {
   padding: 65px 90px 45px;
   width: 100%;
-  background-color: #fff;
+  background-color: rgba(255, 255, 255, 0.5);
 }
 @media only screen and (max-width: 1199px) {
   .fxt-template-layout22 .fxt-content {
@@ -8589,7 +8590,7 @@ ul {
   margin-top: 40px;
 }
 .fxt-template-layout22 .fxt-form form .input-label {
-  color: #979696;
+  color: #000000;
 }
 .fxt-template-layout22 .fxt-form .form-group {
   position: relative;
@@ -8663,7 +8664,7 @@ ul {
   outline: none;
 }
 .fxt-template-layout22 .switcher-text {
-  color: #63bbff;
+  color: #000000;
   font-size: 15px;
   margin-bottom: 5px;
   display: block;
@@ -8672,10 +8673,10 @@ ul {
   transition: all 0.3s ease-in-out;
 }
 .fxt-template-layout22 .switcher-text:hover {
-  color: #000000;
+  color: #ffffff;
 }
 .fxt-template-layout22 .switcher-text2 {
-  color: #63bbff;
+  color: #ffffff;
   font-size: 15px;
   display: inline-block;
   -webkit-transition: all 0.3s ease-in-out;
@@ -8832,7 +8833,7 @@ ul {
 }
 .fxt-template-layout22 .checkbox label {
   padding-left: 20px;
-  color: #a4a4a4;
+  color: #000000;
   margin-bottom: 0;
   font-size: 15px;
   position: relative;

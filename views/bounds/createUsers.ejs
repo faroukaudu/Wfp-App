@@ -1,0 +1,79 @@
+<%- include("../partial/header") -%>
+
+<div class="ugf-bg ufg-main-container">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 p-sm-0">
+        <div class="covid-wrap">
+          <form action="/landing" method="post">
+            <div class="covid-test-wrap ugf-form active offset-lg-2 col-lg-8">
+              <div class="step-block">
+                <div class="input-block">
+                  <div class="row">
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputFname">First Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputFname"
+                          placeholder="Peter"
+                        />
+                      </div>
+                    </div>
+                    <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputLname">Last Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="inputLname"
+                          placeholder="James"
+                        />
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="email">Email</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      id="email"
+                      placeholder="Driver Contact"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Position</label>
+                    <select
+                      class="form-control form-select"
+                      name="position"
+                      id=""
+                    >
+                      <option value="Manager" disabled selected>
+                        --- Select Position ---
+                      </option>
+
+                      <option value="Manager">Manager</option>
+                      <option value="Manager">Storekeeper</option>
+                      <option value="Manager">Assistant logistic officer</option>
+                      <option value="Manager">Assistant Storekeeper</option>
+                      <option value="Manager">Tally Clerk</option>
+                    </select>
+                  </div>
+
+                  <button type="submit" class="button btn">
+                    Send Mail
+                    <img src="assets/images/check.svg" alt="" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<%- include("../partial/footer") -%>
