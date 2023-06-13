@@ -19,6 +19,10 @@ app.get("/login", (req, res) => {
   res.render("Auth/login");
 });
 
+app.get("/addUser", (req, res) => {
+  res.render("bounds/createUsers");
+});
+
 app.get("/landing", (req, res) => {
   res.render("bounds/landing");
 });

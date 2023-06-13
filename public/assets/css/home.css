@@ -558,6 +558,27 @@
   box-shadow: none;
   line-height: 60px;
 }
+.step-block .button {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #ffffff;
+  background: transparent;
+  width: 100%;
+  font-family: "Roboto", sans-serif;
+  border-radius: 5px;
+  height: 60px;
+  border: 2px solid #ffffff;
+  text-align: center;
+  margin-top: auto;
+  outline: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  line-height: 60px;
+}
+.step-block .button:hover {
+color: #267399;
+background-color: #ffffff;
+}
 
 .covid-test-wrap .step-block .prev-btn {
   margin: 0 auto;
