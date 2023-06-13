@@ -1,0 +1,138 @@
+<%- include("../Auth/authHeader") -%>
+
+<div class="ugf-covid covid-bg">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <nav class="navbar navbar-expand-md anfra-nav">
+          <a class="navbar-brand" href="../index.html">
+            <img
+              src="assets/images/Logo/logo white.png"
+              class="main-logo"
+              width="160"
+              alt=""
+            />
+            <img
+              src="assets/images/Logo/isadora std regula font - Copy.png"
+              class="logo-2"
+              width="130"
+              alt=""
+            />
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <i class="las la-bars"></i>
+          </button>
+
+          <div
+            class="collapse navbar-collapse justify-end"
+            id="navbarSupportedContent"
+          >
+            <ul class="navbar-nav ml-auto">
+              <li class="nav-item" style="height: 10px">
+                <h3 class="nav-link text-right" style="margin-top: -20px">
+                  <span class="fw-bolder text-uppercase"> Ibrahim james</span
+                  ><br />
+                  <span class="text-right text-primary">Manager</span><br />
+                  <em style="font-size: 12px; color: rgb(145, 144, 144)"
+                    >Email@gmail.com</em
+                  >
+                </h3>
+              </li>
+              <li class="nav-item">
+                <img
+                  style="border-radius: 50%; border: 1px solid rgb(81, 80, 80)"
+                  src="login/img/profile.png"
+                  width="50px"
+                  alt=""
+                />
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="pt100">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-4 col-lg-5 relative">
+          <div class="covid-tips">
+            <h3>Welcome To Goldpark Logistics</h3>
+            <div class="tips">
+              <div class="content">
+                <p>
+                  We are licensed by the Nigerian Customs Service and the
+                  Nigerian Port Authority to provide Import and Export Clearing
+                  services, and cargo handling operations in all Nigerian Ports.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="step-block row">
+            <div class="row col-lg-12">
+              <a
+                href="/addUser"
+                class="button col-lg-5"
+                style="margin-right: 50px"
+              >
+                Add User</a
+              >
+              <a href="#" class="button col-lg-5"> Add Warehouse</a>
+            </div>
+            <a href="#" class="button col-lg-11 mt-5"> Advance Report</a>
+          </div>
+        </div>
+        <div class="col-xl-5 offset-xl-3 col-lg-6 offset-lg-1 p-sm-0">
+          <div class="covid-wrap">
+            <form action="/landing" method="post">
+              <div class="covid-test-wrap test-step active">
+                <h3 class="text-center">OPERATIONS</h3>
+                <div class="step-block">
+                  <div class="form-group">
+                    <input
+                      type="radio"
+                      name="operation"
+                      class="form-control"
+                      id="Inbound"
+                      value="inbound"
+                    />
+                    <label for="Inbound">INBOUND</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="radio"
+                      name="operation"
+                      value="outbound"
+                      class="form-control"
+                      id="outbound"
+                    />
+                    <label for="outbound">OUTBOUND</label>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="radio"
+                      name="operation"
+                      class="form-control"
+                      id="report"
+                      value="report"
+                    />
+                    <label for="report">REPORT</label>
+                  </div>
+                  <button type="submit" class="button">Next</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
