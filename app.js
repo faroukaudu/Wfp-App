@@ -9,14 +9,10 @@ const superadmin = require(__dirname + "/admin/superadmin.js");
 
 
 
-<<<<<<< HEAD
 // app.use(express.static("public"));
 // app.use(bodyParser.urlencoded({ extended: true }));
 // app.set("view engine", "ejs");
-=======
-app.get("/addUser", (req, res) => {
-  res.render("bounds/createUsers");
-});
+
 
 app.get("/landing", (req, res) => {
   res.render("bounds/landing");
@@ -27,7 +23,6 @@ app.get("/report", (req, res) => {
 app.get("/submit", (req, res) => {
   res.render("bounds/formComplete");
 });
->>>>>>> 8bf55f1d0c99d3332c3f5937f2f328e71c271a80
 
 
 app.get("/admin", (req,res) =>{

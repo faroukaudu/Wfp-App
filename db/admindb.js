@@ -23,6 +23,7 @@ const adminInfoSchema = new mongoose.Schema({
   postion:String,
   profile_pic:String,
   auth:String,
+  admin:Boolean,
 
 },
 {timestamps: true}

@@ -7691,7 +7691,7 @@ ul {
   display: flex;
   -webkit-box-align: center;
   -ms-flex-align: center;
-  align-items: center;
+  align-items: left;
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;

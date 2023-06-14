@@ -21,9 +21,10 @@ const userInfoSchema = new mongoose.Schema({
   phone:Number,
   date:String,
   active:Boolean,
-  postion:String,
+  position:String,
   profile_pic:String,
   auth:String,
+  admin:Boolean,
 
 },
 {timestamps: true}
