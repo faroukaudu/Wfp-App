@@ -259,6 +259,19 @@
   }
 }
 
+.covid-tips h3 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+  text-transform: uppercase;
+}
+.covid-tips .tips p {
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: #ffffff;
+  font-family: "Roboto", sans-serif;
+}
 .user-tips h3 {
   font-size: 40px;
   text-shadow: 4px 4px 6px #1c2437;

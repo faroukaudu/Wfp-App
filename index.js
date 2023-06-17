@@ -99,18 +99,18 @@ app.get("/outbound", (req, res) => {
 });
 
 app.get("/landing", (req, res) => {
-  // if (req.isAuthenticated()) {
-  res.render("bounds/landing", { data: req.user });
-  // } else {
-  //   res.redirect("/login");
-  // }
+  if (req.isAuthenticated()) {
+    res.render("bounds/landing", { data: req.user });
+  } else {
+    res.redirect("/login");
+  }
 });
 app.get("/landing2", (req, res) => {
-  // if (req.isAuthenticated()) {
-  res.render("bounds/landing2", { data: req.user });
-  // } else {
-  //   res.redirect("/login");
-  // }
+  if (req.isAuthenticated()) {
+    res.render("bounds/landing2", { data: req.user });
+  } else {
+    res.redirect("/login");
+  }
 });
 
 app.get("/report", (req, res) => {
