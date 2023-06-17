@@ -1,4 +1,5 @@
 <%- include("../partial/header") -%>
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <div class="ugf-bg ufg-main-container">
   <div class="container">
@@ -8,15 +9,16 @@
           <div class="covid-header offset-lg-2 col-lg-8">
             <h2>Add User</h2>
           </div>
-          <form action="/landing" method="post">
+          <form action="/addUser" method="post">
             <div class="covid-test-wrap ugf-form active offset-lg-2 col-lg-8">
               <div class="step-block">
                 <div class="input-block">
                   <div class="row">
-                    <div class="col-md-6 p-sm-0">
+                    <div class="col-md-12 p-sm-0">
                       <div class="form-group">
-                        <label for="inputFname">First Name</label>
+                        <label for="inputFname">Username</label>
                         <input
+                        name="realname"
                           type="text"
                           class="form-control"
                           id="inputFname"
@@ -24,29 +26,33 @@
                         />
                       </div>
                     </div>
-                    <div class="col-md-6 p-sm-0">
+                    <!-- <div class="col-md-6 p-sm-0">
                       <div class="form-group">
-                        <label for="inputLname">Last Name</label>
+                        <label for="inputFname">Password</label>
                         <input
-                          type="text"
+                        name="password"
+                          type="password"
                           class="form-control"
-                          id="inputLname"
-                          placeholder="James"
+                          id="inputFname"
+                          placeholder="Peter"
                         />
                       </div>
-                    </div>
-                  </div>
+                    </div> -->
+                      
+                    
+                  
 
                   <div class="form-group">
                     <label for="email">Email</label>
                     <input
+                    name="username"
                       type="email"
                       class="form-control"
                       id="email"
                       placeholder="Driver Contact"
                     />
                   </div>
-                  <div class="form-group">
+                  <div class="form-group col-md-6 p-sm-0">
                     <label for="email">Position</label>
                     <select
                       class="form-control form-select"
@@ -58,17 +64,25 @@
                       </option>
 
                       <option value="Manager">Manager</option>
-                      <option value="Manager">Storekeeper</option>
-                      <option value="Manager">
-                        Assistant logistic officer
-                      </option>
-                      <option value="Manager">Assistant Storekeeper</option>
-                      <option value="Manager">Tally Clerk</option>
+                      <option value="Storekeeper">Storekeeper</option>
+                      <option value="Assistant logistic officer">Assistant logistic officer</option>
+                      <option value="Assistant Storekeeper">Assistant Storekeeper</option>
+                      <option value="Tally Clerk">Tally Clerk</option>
                     </select>
                   </div>
+                  <div class="form-group col-md-6 p-sm-0">
+                    <label for="email">Phone Number</label>
+                    <input
+                    name="phone"
+                      type="phone"
+                      class="form-control"
+                      id="email"
+                      placeholder="Driver Contact"
+                    />
+                  </div>
 
-                  <button type="submit" class="button btn">
-                    Send Mail
+                  <button type="submit" class="button btn" data-toggle="modal" data-target="#exampleModalCenter">
+                    Register User
                     <img src="assets/images/check.svg" alt="" />
                   </button>
                 </div>
@@ -80,5 +94,44 @@
     </div>
   </div>
 </div>
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content rounded-0">
+          <div class="modal-body p-4 px-5">
+
+            
+            <div class="main-content text-center">
+                
+                <a href="#" class="close-btn" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true"><span class="icon-close2"></span></span>
+                  </a>
+
+                <div class="warp-icon mb-4">
+                  <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_wWZd8QJ7Cj.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop  autoplay></lottie-player>
+                </div>
+                <form action="#">
+                  <label for="">User Created</label>
+                  <p class="mb-4">A mail has been sent to the User</p>
+                  
+                  <div class="d-flex">
+                    <div class="mx-auto">
+                      
+                    <a href="#" class="btn btn-primary px-4 py-3" data-toggle="modal" 
+                    data-target="#exampleModalCenter">Done</a>
+                    </div>
+                  </div>
+                </form>
+              
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/js/popper.min.js"></script>
+    <script src="assets/js/bootstrap-modal.min.js"></script>
 
 <%- include("../partial/footer") -%>

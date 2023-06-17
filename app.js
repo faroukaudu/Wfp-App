@@ -9,9 +9,10 @@ const superadmin = require(__dirname + "/admin/superadmin.js");
 
 
 
-app.get("/addUser", (req, res) => {
-  res.render("bounds/createUsers");
-});
+// app.use(express.static("public"));
+// app.use(bodyParser.urlencoded({ extended: true }));
+// app.set("view engine", "ejs");
+
 
 app.get("/landing", (req, res) => {
   res.render("bounds/landing");

@@ -259,55 +259,58 @@
   }
 }
 
-.covid-tips h3 {
-  font-size: 2.4rem;
+.user-tips h3 {
+  font-size: 40px;
+  text-shadow: 4px 4px 6px #1c2437;
+  font-stretch: expanded;
   font-weight: 700;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 50px;
   text-transform: uppercase;
 }
-
-.covid-tips .tips {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: baseline;
-  -ms-flex-align: baseline;
-  align-items: baseline;
+.user-tips p {
+  font-size: 25px;
+  margin-top: -32px;
+  font-style: italic;
+  letter-spacing: 2px;
+  font-weight: 100;
+  color: #ffffff;
+  font-family: sans-serif;
 }
 
-.covid-tips .tips:not(:last-child) {
-  margin-bottom: 40px;
-}
-
-.covid-tips .tips .icon {
-  -webkit-box-flex: 0;
-  -ms-flex: 0 0 55px;
-  flex: 0 0 55px;
-}
-
-.covid-tips .tips .content h4 {
+.user-tips .tips {
   font-size: 1.8rem;
-  font-weight: 700;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 10px;
+  margin-bottom: 70px;
 }
-
-.covid-tips .tips .content p {
-  font-size: 1.5rem;
-  font-weight: 400;
+.user-tips .tips .top {
+  display: flex;
+  margin: auto;
+  justify-content: space-between;
+  align-items: center;
+}
+.user-tips .tips .top .badge {
+  font-size: 15px;
+  padding: 7px 15px;
+  border-radius: 20px;
+  background-color: #0f394e;
   color: #ffffff;
-  font-family: "Roboto", sans-serif;
+}
+.user-tips .tips .top .title {
+  font-size: 15px;
+  font-style: italic;
+  font-weight: 100;
+  font-family: sans-serif;
+  text-align: center;
+  color: #ffffff;
 }
 
 @media all and (max-width: 991px) {
-  .covid-tips {
-    display: none;
+  .user-tips {
+    display: block;
   }
 }
-
 .covid-header {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -576,8 +579,8 @@
   line-height: 60px;
 }
 .step-block .button:hover {
-color: #267399;
-background-color: #ffffff;
+  color: #267399;
+  background-color: #ffffff;
 }
 
 .covid-test-wrap .step-block .prev-btn {
