@@ -8192,6 +8192,12 @@ ul {
   padding: 10px 15px;
   color: #111;
 }
+.fxt-template-layout21 .fxt-form input[type="text"] {
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 20px;
+  font-weight: 600;
+}
 .fxt-template-layout21 .fxt-form input::-webkit-input-placeholder {
   color: #a1a1a1;
   font-size: 15px;

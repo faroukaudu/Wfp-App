@@ -6,22 +6,14 @@ const mongoose = require("mongoose");
 var db = require(__dirname + "/db/connection.js");
 var db = require(__dirname + "/db/userdb.js");
 
-
 const uri = "mongodb://127.0.0.1:27017/wfpApp";
 
-database().catch(err => console.log(err));
-
+database().catch((err) => console.log(err));
 
 async function database() {
   await mongoose.connect(uri);
   // await mongoose.connect('mongodb://127.0.0.1:27017/gitportalDB');
 }
-
-
-
-
-
-
 
 const app = express();
 app.use(express.static("public"));
@@ -39,15 +31,14 @@ app.get("/login", (req, res) => {
   res.render("Auth/login");
 });
 
-app.get("/logins", (req, res) => {
-  res.render("Auth/login-13");
-  
-});
+// app.get("/logins", (req, res) => {
+//   res.render("Auth/login-13");
 
+// });
 
-app.get("/", function(req,res){
+app.get("/", function (req, res) {
   res.render("auth/login");
-})
+});
 
 app.get("/landing", (req, res) => {
   res.render("bounds/landing");
@@ -88,9 +79,6 @@ app.post("/auth", (req, res) => {
   res.redirect("/landing");
 });
 
-
-
 module.exports = {
-    mainapp:app,
-
-}
+  mainapp: app,
+};
