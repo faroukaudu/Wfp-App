@@ -9,7 +9,7 @@
       <div class="col-xl-6 col-lg-7 col-sm-12 col-12 fxt-bg-color">
         <div class="fxt-content">
           <div class="fxt-header">
-            <a href="login-21.html" class="fxt-logo"
+            <a href="#" class="fxt-logo"
               ><img
                 src="/login/img/Logo/isadora std regula font - Copy.png"
                 width="150"
@@ -26,6 +26,8 @@
                     id="email"
                     class="form-control"
                     name="authcode"
+                    maxlength="6"
+                    onkeypress="return /[0-9]/i.test(event.key)"
                     placeholder="Auth Code"
                     required="required"
                   />

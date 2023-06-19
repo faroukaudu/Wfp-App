@@ -11,8 +11,6 @@ const passport = require("passport");
 const session = require("express-session");
 // const passportLocalMongoose = require("passport-local-mongoose");
 
-
-
 const app = express();
 app.use(express.json());
 app.use(express.static("public"));
@@ -20,91 +18,67 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.set("view engine", "ejs");
 
 // sessions
-app.use(session({
-  secret: 'fly boy',
-  resave: false,
-  saveUninitialized: false,
-  cookie: { 
+app.use(
+  session({
+    secret: "fly boy",
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
       //Expire Session after 1min.
-      maxAge: 600000,
+      maxAge: 200000,
    }
 }));
 
 app.use(passport.initialize());
 app.use(passport.session());
 
-
 const uri = "mongodb://127.0.0.1:27017/wfpApp";
 
-database().catch(err => console.log(err));
-
+database().catch((err) => console.log(err));
 
 async function database() {
   await mongoose.connect(uri);
   // await mongoose.connect('mongodb://127.0.0.1:27017/gitportalDB');
 }
 
-
-
-function appDb(){
+function appDb() {
   // userschema.plugin(uniqueValidator);
-  const Admindb = mongoose.model("User",userschema);
+  const Admindb = mongoose.model("User", userschema);
   passport.use(Admindb.createStrategy());
-
-  passport.serializeUser(function(user, cb) {
-    console.log("serializing user uwuss:" + JSON.stringify(user))
-    process.nextTick(function() {
-      console.log(user.id);
-        return cb(null, user.id)
+  passport.serializeUser(Admindb.serializeUser());
+  passport.deserializeUser(function (id, cb) {
+    console.log("deserializing user owo:" + JSON.stringify(id))
+    Admindb.findOne({id:id}).then((result)=>{
+      if (!result) { return cb("error")}
+        return cb(null, result);
+    }).catch((err)=>{
+      console.log(err);
     })
 })
 
-passport.deserializeUser(function (id, cb) {
-  console.log("trying to GET" + id);
-    console.log("deserializing user owo:" + JSON.stringify(id))
-    Admindb.findById({_id:id}).then((user)=>{
-      console.log("GETTING");
-      return cb(null, user);
-    }).catch((err)=>{
-      return cb(err);
-    });   
-});
-   return Admindb;
+    return Admindb;
 }
 
 const User = appDb();
 
-
-
-
-
-
 app.get("/login", (req, res) => {
-  res.render("Auth/login")
- 
-});;
+  res.render("Auth/login");
+});
 
 app.post("/login", (req, res) => {
-  console.log(req.body.username);
   
   const userlogin = new User ({username:req.body.username,
     password:req.body.password});
-  
+    
+    
+    // console.log(userlogin);
     req.login(userlogin, function(err){
       if (!err) {
         passport.authenticate("local", {
           failureRedirect: '/inbound',
           failureMessage: true
         })(req, res, function () {
-          console.log(req.user);
-          // res.redirect("/landing");
-          User.findOne({email:req.body.username}).then((foundUser)=>{
-            if(foundUser.admin ===true){
-              res.redirect("/auth");
-            }else{
-              res.redirect("/landing");
-            }
-          })
+          res.redirect("/auth");
         });
       } else {
         console.log(err);
@@ -123,7 +97,6 @@ app.post("/login", (req, res) => {
 // GET LANDING PAGE
 app.get("/landing", (req, res) => {
   if(req.isAuthenticated()){
-    console.log(req.user);
     res.render("bounds/landing", {data:req.user});
   }else{
     res.redirect("/login");
@@ -142,7 +115,8 @@ app.get("/catch", (req, res) => {
   res.redirect("/addUser");
 });
 
-// POST LANDING
+
+
 app.post("/landing", (req, res) => {
   const operations = req.body.operation;
   console.log(operations);
@@ -157,37 +131,27 @@ app.post("/landing", (req, res) => {
 
 
 
+app.post("/inbound", (req, res) => {
+  res.redirect("/submit");
+});
 
-app.get("/auth", (req,res)=>{
+app.get("/auth", (req, res) => {
   // res.render("Auth/auth");
   console.log("new route");
-  if(req.isAuthenticated()){
+  if (req.isAuthenticated()) {
     console.log(req.user);
     res.render("Auth/auth");
-  }else{
+  } else {
     res.redirect("login");
   }
-})
+});
 app.post("/auth", (req, res) => {
   console.log(req.body.authcode);
   res.redirect("/landing");
 });
 
-
-app.get("/modal", (req,res)=>{
+app.get("/modal", (req, res) => {
   res.render("index");
-})
-
-app.post("/signout", (req,res)=>{
-  req.logout(function(err){
-    if(err){
-      console.log(err);
-    }else{
-      res.redirect("/login");
-    }
-  })
-  
-
 })
 
 
@@ -195,7 +159,6 @@ app.post("/signout", (req,res)=>{
 module.exports = {
     mainapp:app,
     userdb:appDb(),
-    warehouseDB:Warehouse,
     auth:passport,
 
 }
