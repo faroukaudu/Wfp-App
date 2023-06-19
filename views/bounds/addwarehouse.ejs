@@ -6,21 +6,22 @@
     <div class="row">
       <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 p-sm-0">
         <div class="covid-wrap">
-          <h4 style="text-align: center;">ADD A NEW USER</h4>
-          <form action="/addUser" method="post">
+          <h4 style="text-align: center;">ADD A NEW WAREHOUSE</h4>
+          <!-- <p><%= users%></p> -->
+          <form action="/addstore" method="post">
             <div class="covid-test-wrap ugf-form active offset-lg-2 col-lg-8">
               <div class="step-block">
                 <div class="input-block">
                   <div class="row">
                     <div class="col-md-12 p-sm-0">
                       <div class="form-group">
-                        <label for="inputFname">Full Name</label>
+                        <label for="inputFname">Warehouse Name</label>
                         <input
-                        name="realname"
+                        name="warehouse_name"
                           type="text"
                           class="form-control"
                           id="inputFname"
-                          placeholder="Peter Acheme"
+                          placeholder="WFP721"
                         />
                       </div>
                     </div>
@@ -40,15 +41,25 @@
                     
                   
 
-                  <div class="form-group">
-                    <label for="email">Email</label>
-                    <input
-                    name="username"
-                      type="email"
-                      class="form-control"
-                      id="email"
-                      placeholder="example@goldparklogistics.com"
-                    />
+                  
+                  <div class="form-group col-md-12 p-sm-0">
+                    <label for="email">Warehouse Officer</label>
+                    <select
+                      class="form-control form-select"
+                      name="warehouse_off"
+                      id=""
+                    >
+                      <option value="Manager" disabled selected>
+                        --- Assign Warehouse Officer ---
+                      </option>
+                      
+                        <% users.forEach(function(user){ %>
+                          <option value="<%= user.fullname%>"><%= user.fullname%></option>
+                        <% }) %>
+                      
+
+
+                    </select>
                   </div>
                   <div class="form-group col-md-6 p-sm-0">
                     <label for="email">Position</label>

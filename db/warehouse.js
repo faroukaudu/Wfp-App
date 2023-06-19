@@ -8,58 +8,83 @@ mongoose.set('strictQuery', true);
 //   await mongoose.connect(uri);
 // }
 //database().catch(err => console.log(err));
-const warehouseSchema = new mongoose.Schema({
-  warehouse_name:String,
-  officer_name:String,
-  inbound:[inboundSchema],
-  outbound:[outboundSchema],
-  date:String,
 
 
-},
-{timestamps: true}
+// TRANSPORTER SCHEMA
+const transporterSchema = new mongoose.Schema({
+    transporter_name:String,
+    phone:String,
+    truck_plate:String,
+    driver_info:String,
+  });
 
-)
 
 // INBOUND SCHEMA
 
 const inboundSchema = new mongoose.Schema({
-    batch_num: Number,
+    batch_num: String,
     obd:String,
     warehouse:String,
     activity: String,
-    transport:[],
+    transport:[transporterSchema],
     destination: [
         {from: String, to: String}
     ],
     commodity:String,
     unit_wieght:String,
-    Metri_Ton:String,
+    metri_Ton:String,
     input_officer:String,
     remark:String,
     date:String,
+    qty:String,
     stacks: [],
 });
 
 // OUTBOUND SCHEMA
 
 const outboundSchema = new mongoose.Schema({
-    batch_num: Number,
+    batch_num: String,
     obd:String,
     warehouse:String,
-    transport:[],
+    transport:[transporterSchema],
     destination: [
         {from: String, to: String}
     ],
     commodity:String,
-    unit_wieght:String,
-    Metri_Ton:String,
+    unit_weight:String,
+    metri_Ton:String,
     input_officer:String,
     remark:String,
     date:String,
+    qty:String,
 });
 
+const warehouseSchema = new mongoose.Schema({
+    warehouse_name:{
+        type:String,
+        required:true,
+        unique:true,
+    },
+    officer_name:{
+        type:String,
+        required:true,
+        unique:true,
+    },
+    inbound:[inboundSchema],
+    outbound:[outboundSchema],
+    date:String,
+  
+  
+  },
+  {timestamps: true}
+  
+  )
 
 
 
-module.exports = adminInfoSchema;
+const Warehouse = mongoose.model("Warehouse",warehouseSchema);
+
+
+
+
+module.exports = Warehouse;

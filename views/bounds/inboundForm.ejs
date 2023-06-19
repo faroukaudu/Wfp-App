@@ -1,4 +1,4 @@
-<%- include("../partial/header") -%>
+<%- include("../partial/header",{userInfo:data}); -%>
 
 <div class="ugf-bg ufg-main-container">
   <div class="container">
@@ -38,32 +38,39 @@
                           name="date"
                           class="form-control"
                           id="Date"
-                          placeholder="e.g.  Smith"
+                          placeholder="00/00/0000"
                         />
                       </div>
                     </div>
-                    <div class="col-md-6 p-sm-0">
-                      <div class="form-group">
-                        <label for="Date">Warehouse</label>
-                        <input
-                          type="text"
-                          id="state"
-                          placeholder="State"
-                          class="form-control"
-                        />
-                      </div>
+                    <div class="form-group col-md-6 p-sm-0">
+                      <label for="email">Warehouse / Store</label>
+                      <select
+                        class="form-control form-select"
+                        name="warehouse"
+                        id=""
+                      >
+                        <option value="Manager" disabled selected>
+                          --- Warehouse ---
+                        </option>
+                        <option value="WFP720">WFP720</option>
+                        <option value="WFP721">WFP721</option>
+                        <option value="WFP722">WFP722</option>
+                        <option value="WFP723">WFP723</option>
+                    
+                      </select>
                     </div>
                   </div>
                   <div class="form-group">
                     <label for="state">Refrence NO/OBD.</label>
                     <input
+                      name="obd"
                       type="text"
                       id="state"
-                      placeholder="State"
+                      placeholder="e.g: 23336yy452"
                       class="form-control"
                     />
                   </div>
-                  <a href="#" class="button">Next Step &nbsp; &#10140;</a>
+                  <a href="#" class="button">Next | Commodity &nbsp; &#10140;</a>
                 </div>
               </div>
             </div>
@@ -76,23 +83,25 @@
                     <div class="form-group">
                       <label for="Date">Commodity</label>
                       <input
+                      name="commodity"
                         type="text"
                         name="commodity"
                         class="form-control"
                         id="Date"
-                        placeholder="Commodity"
+                        placeholder="e.g: Beans"
                       />
                     </div>
                   </div>
                   <div class="row">
                     <div class="col-md-6 p-sm-0">
                       <div class="form-group">
-                        <label for="Date">Unit Weight</label>
+                        <label for="Date">Unit Weight / kg</label>
                         <input
+                          name="kg"
                           type="text"
                           class="form-control"
                           id="Date"
-                          placeholder="e.g.  Smith"
+                          placeholder="e.g. kg"
                         />
                       </div>
                     </div>
@@ -100,10 +109,11 @@
                       <div class="form-group">
                         <label for="Date">Quantity</label>
                         <input
+                        name="qty"
                           type="text"
                           class="form-control"
                           id="Date"
-                          placeholder="e.g.  Smith"
+                          placeholder="QTY"
                         />
                       </div>
                     </div>
@@ -113,23 +123,30 @@
                       <div class="form-group">
                         <label for="Date">Metri-ton</label>
                         <input
+                          name="mt"
                           type="text"
                           class="form-control"
                           id="Date"
-                          placeholder="e.g.  Smith"
+                          placeholder="e.g.  MT"
                         />
                       </div>
                     </div>
-                    <div class="col-md-6 p-sm-0">
-                      <div class="form-group">
-                        <label for="Date">Activity</label>
-                        <input
-                          type="text"
-                          class="form-control"
-                          id="Date"
-                          placeholder="e.g.  Smith"
-                        />
-                      </div>
+                    <div class="form-group col-md-6 p-sm-0">
+                      <label for="email">Activity</label>
+                      <select
+                        class="form-control form-select"
+                        name="activity"
+                        id=""
+                      >
+                        <option value="Manager" disabled selected>
+                          --- Activity ---
+                        </option>
+                        <option value="user.fullname">UFI...</option>
+                        <option value="user.fullname">NGO</option>
+                        <option value="user.fullname">GCLMI</option>
+                        
+                    
+                      </select>
                     </div>
                   </div>
                   <h4 style="text-align: center">Destination</h4>
@@ -138,10 +155,11 @@
                       <div class="form-group">
                         <label for="Date">From</label>
                         <input
+                          name="d-from"
                           type="text"
                           class="form-control"
                           id="Date"
-                          placeholder="e.g.  Smith"
+                          placeholder="e.g.  Lagos"
                         />
                       </div>
                     </div>
@@ -149,16 +167,17 @@
                       <div class="form-group">
                         <label for="Date">To</label>
                         <input
+                          name="d-to"
                           type="text"
                           class="form-control"
                           id="Date"
-                          placeholder="e.g.  Smith"
+                          placeholder="e.g.  Kano"
                         />
                       </div>
                     </div>
                   </div>
 
-                  <a href="#" class="button">Next Step &nbsp; &#10140;</a>
+                  <a href="#" class="button">Next | Transporters &nbsp; &#10140;</a>
                   <a
                     href="#"
                     class="prev-btn"
@@ -179,9 +198,10 @@
                   <div class="form-group">
                     <label for="state">Transporter / Supplier name</label>
                     <input
+                      name="transporter"
                       type="text"
                       id="state"
-                      placeholder="State"
+                      placeholder="Garba Lawal"
                       class="form-control"
                     />
                   </div>
@@ -189,12 +209,13 @@
                   <div class="row">
                     <div class="col-md-6 p-sm-0">
                       <div class="form-group">
-                        <label for="inputFname">Phone Name</label>
+                        <label for="inputFname">Phone Number</label>
                         <input
+                          name="t_phone"
                           type="text"
                           class="form-control"
-                          id="inputFname"
-                          placeholder="e.g.  Smith"
+                          id=""
+                          placeholder="e.g.  081600...."
                         />
                       </div>
                     </div>
@@ -202,36 +223,38 @@
                       <div class="form-group">
                         <label for="inputLname">Truck Plate No.</label>
                         <input
+                          name="t_plate_no"
                           type="text"
                           class="form-control"
                           id="inputLname"
-                          placeholder="e.g.  Robert"
+                          placeholder="e.g.  KGV3442"
                         />
                       </div>
                     </div>
                   </div>
 
                   <div class="form-group">
-                    <label for="remark">Driver Contact</label>
+                    <label for="remark">Driver Name</label>
                     <input
                       type="text"
+                      name="driver_c"
                       class="form-control"
                       id="inputLname"
-                      placeholder="Driver Contact"
+                      placeholder="James Gomez"
                     />
                   </div>
                   <div class="form-group">
                     <label for="remark">Remark form</label>
                     <textarea
                       class="form-control"
-                      name=""
+                      name="remark"
                       id="remark"
                       cols="30"
                       rows="10"
                     ></textarea>
                   </div>
 
-                  <a href="#" class="button">Next Step &nbsp; &#10140;</a>
+                  <a href="#" class="button">Review &nbsp; &#10140;</a>
                   <a
                     href="#"
                     class="prev-btn"
@@ -376,7 +399,7 @@
                     </div>
                   </div>
 
-                  <button type="submit" class="btn">
+                  <button type="submit" class="btn btn-primary">
                     Submit &nbsp;
                     <img src="assets/images/check.svg" alt="" />
                   </button>

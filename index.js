@@ -3,13 +3,13 @@ const bodyParser = require("body-parser");
 const lodash = require("lodash");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const { log } = require("console");
+// const { log } = require("console");
 var db = require(__dirname + "/db/connection.js");
 var userschema = require(__dirname + "/db/userdb.js");
-var adminschema = require(__dirname + "/db/userdb.js");
+var Warehouse = require(__dirname + "/db/warehouse.js");
 const passport = require("passport");
 const session = require("express-session");
-const passportLocalMongoose = require("passport-local-mongoose");
+// const passportLocalMongoose = require("passport-local-mongoose");
 
 
 
@@ -26,7 +26,7 @@ app.use(session({
   saveUninitialized: false,
   cookie: { 
       //Expire Session after 1min.
-      maxAge: 200000,
+      maxAge: 600000,
    }
 }));
 
@@ -50,18 +50,26 @@ function appDb(){
   // userschema.plugin(uniqueValidator);
   const Admindb = mongoose.model("User",userschema);
   passport.use(Admindb.createStrategy());
-  passport.serializeUser(Admindb.serializeUser());
-  passport.deserializeUser(function (id, cb) {
-    console.log("deserializing user owo:" + JSON.stringify(id))
-    Admindb.findOne({id:id}).then((result)=>{
-      if (!result) { return cb("error")}
-        return cb(null, result);
-    }).catch((err)=>{
-      console.log(err);
+
+  passport.serializeUser(function(user, cb) {
+    console.log("serializing user uwuss:" + JSON.stringify(user))
+    process.nextTick(function() {
+      console.log(user.id);
+        return cb(null, user.id)
     })
 })
 
-    return Admindb;
+passport.deserializeUser(function (id, cb) {
+  console.log("trying to GET" + id);
+    console.log("deserializing user owo:" + JSON.stringify(id))
+    Admindb.findById({_id:id}).then((user)=>{
+      console.log("GETTING");
+      return cb(null, user);
+    }).catch((err)=>{
+      return cb(err);
+    });   
+});
+   return Admindb;
 }
 
 const User = appDb();
@@ -77,19 +85,26 @@ app.get("/login", (req, res) => {
 });;
 
 app.post("/login", (req, res) => {
+  console.log(req.body.username);
   
   const userlogin = new User ({username:req.body.username,
     password:req.body.password});
-    
-    
-    // console.log(userlogin);
+  
     req.login(userlogin, function(err){
       if (!err) {
         passport.authenticate("local", {
           failureRedirect: '/inbound',
           failureMessage: true
         })(req, res, function () {
-          res.redirect("/auth");
+          console.log(req.user);
+          // res.redirect("/landing");
+          User.findOne({email:req.body.username}).then((foundUser)=>{
+            if(foundUser.admin ===true){
+              res.redirect("/auth");
+            }else{
+              res.redirect("/landing");
+            }
+          })
         });
       } else {
         console.log(err);
@@ -105,42 +120,29 @@ app.post("/login", (req, res) => {
 
 
 
-
-
-
-
-
-app.get("/inbound", (req, res) => {
-  res.render("bounds/inboundForm");
-});
-app.get("/outbound", (req, res) => {
-  res.render("bounds/outboundForm");
-});
-
-
-
-
+// GET LANDING PAGE
 app.get("/landing", (req, res) => {
   if(req.isAuthenticated()){
+    console.log(req.user);
     res.render("bounds/landing", {data:req.user});
   }else{
     res.redirect("/login");
   }
 });
 
+// GET REPORTS
 app.get("/report", (req, res) => {
   res.render("bounds/report");
 });
 app.get("/submit", (req, res) => {
   res.render("bounds/formComplete");
 });
-
+// TESTING ROUTES
 app.get("/catch", (req, res) => {
   res.redirect("/addUser");
 });
 
-
-
+// POST LANDING
 app.post("/landing", (req, res) => {
   const operations = req.body.operation;
   console.log(operations);
@@ -155,9 +157,6 @@ app.post("/landing", (req, res) => {
 
 
 
-app.post("/inbound", (req, res) => {
-  res.redirect("/submit");
-});
 
 app.get("/auth", (req,res)=>{
   // res.render("Auth/auth");
@@ -179,11 +178,24 @@ app.get("/modal", (req,res)=>{
   res.render("index");
 })
 
+app.post("/signout", (req,res)=>{
+  req.logout(function(err){
+    if(err){
+      console.log(err);
+    }else{
+      res.redirect("/login");
+    }
+  })
+  
+
+})
+
 
 
 module.exports = {
     mainapp:app,
     userdb:appDb(),
+    warehouseDB:Warehouse,
     auth:passport,
 
 }

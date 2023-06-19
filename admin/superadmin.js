@@ -11,9 +11,15 @@ app.get("/super", function(req, res){
 res.send("MAIN ADMIN PAGE");
 })
 
+// const data = {username:"farouk", email:"meme@gmail.com", position:"Boss"}
 
 app.get("/addUser", (req, res) => {
-    res.render("bounds/createUsers");
+  // res.render("bounds/createUsers",{data:data});
+    if(req.isAuthenticated()){
+      res.render("bounds/createUsers",{data:req.user});
+    }else{
+      res.redirect("/login");
+    }
   });
 
 //   post route
@@ -29,29 +35,40 @@ app.get("/addUser", (req, res) => {
 
     User.register(new User({
       username: req.body.username,
-      email:req.body.username,
-      phone:08160278321,
+      fullname:req.body.realname,
+      email: req.body.username,
+      phone: 08160278321,
       active: true,
-      position:req.body.position,
-      profile_pic:"img/user_pro/farouk.jpg",
-      auth:"0000",
-      admin:isAdmin
-
-    }), req.body.password, function(err, user){
+      position: req.body.position,
+      profile_pic: "img/user_pro/farouk.jpg",
+      auth: "0000",
+      admin: isAdmin
+    }), "121212", function (err, user) {
 
       if (!err) {
-        passport.authenticate("local", {
-          failureRedirect: '/landing',
-          failureMessage: true
-        })(req, res, function () {
-          res.redirect("/login");
-        });
+        // Delay
+        setTimeout(function() {
+          res.redirect("landing");  
+        }, 5000);
+        
+        // passport.authenticate("local", {
+        //   failureRedirect: '/inbound',
+        //   failureMessage: true
+        // })(req, res, function () {
+        //   res.redirect("/landing");
+        // });
       } else {
+        res.send(err);
         console.log(err);
       }
 
     })
   });
+
+
+
+
+  
 
 
 

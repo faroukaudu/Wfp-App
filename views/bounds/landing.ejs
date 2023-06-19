@@ -46,6 +46,11 @@
                   >
                 </h3>
               </li>
+              <li class="nav-item" style="height: 10px">
+                <form action="/signout" method="post">
+                  <button>signout</button>
+                </form>
+              </li>
               <li class="nav-item">
                 <img
                   style="border-radius: 50%; border: 1px solid rgb(81, 80, 80)"
@@ -76,19 +81,26 @@
               </div>
             </div>
           </div>
-          <div class="step-block row">
-            <div class="row col-lg-12">
-              <a
-                href="/addUser"
-                class="button col-lg-5"
-                style="margin-right: 50px"
-              >
-                Add User</a
-              >
-              <a href="#" class="button col-lg-5"> Add Warehouse</a>
+          <p><%= data.admin %></p>
+          <p><%= data.username %></p>
+          
+          <% if(data.admin == true){ %>
+            <div class="step-block row">
+              <div class="row col-lg-12">
+                <a
+                  href="/addUser"
+                  class="button col-lg-5"
+                  style="margin-right: 50px"
+                >
+                  Add User</a
+                >
+                <a href="/addstore" class="button col-lg-5"> Add Warehouse</a>
+              </div>
+              <a href="#" class="button col-lg-11 mt-5"> Advance Report</a>
             </div>
-            <a href="#" class="button col-lg-11 mt-5"> Advance Report</a>
-          </div>
+          <% }else{ %>
+            <p>You need to be admin</p>
+          <% } %>
         </div>
         <div class="col-xl-5 offset-xl-3 col-lg-6 offset-lg-1 p-sm-0">
           <div class="covid-wrap">
