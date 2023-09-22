@@ -37,7 +37,7 @@ app.get("/addUser", (req, res) => {
       username: req.body.username,
       fullname:req.body.realname,
       email: req.body.username,
-      phone: 08160278321,
+      phone: 8160278321,
       active: true,
       position: req.body.position,
       profile_pic: "img/user_pro/farouk.jpg",

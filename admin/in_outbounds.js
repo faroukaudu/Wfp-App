@@ -57,11 +57,13 @@ app.post("/inbound", async (req, res) => {
     // res.send(house);
     path.push(inbound_item);
     house.save();
+    res.redirect("process_s");
     // path.transport.push(transportInfo);
     // house.save();
     // res.send(house);
   }).catch((err)=>{
-    res.send(err)
+    res.redirect("process");
+    // res.send(err)
   })
 
   // res.redirect("/submit");
