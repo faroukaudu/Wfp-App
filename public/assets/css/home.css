@@ -282,11 +282,11 @@
   text-transform: uppercase;
 }
 .user-tips p {
-  font-size: 25px;
+  font-size: 22px;
   margin-top: -32px;
   font-style: italic;
-  letter-spacing: 2px;
-  font-weight: 100;
+  letter-spacing: 1px;
+  font-weight: lighter;
   color: #ffffff;
   font-family: sans-serif;
 }

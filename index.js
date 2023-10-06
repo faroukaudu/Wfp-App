@@ -3,7 +3,6 @@ const bodyParser = require("body-parser");
 const lodash = require("lodash");
 const ejs = require("ejs");
 const mongoose = require("mongoose");
-const { log } = require("console");
 var db = require(__dirname + "/db/connection.js");
 var userschema = require(__dirname + "/db/userdb.js");
 var adminschema = require(__dirname + "/db/userdb.js");
@@ -100,7 +99,7 @@ app.get("/outbound", (req, res) => {
 
 app.get("/landing", (req, res) => {
   if (req.isAuthenticated()) {
-    res.render("bounds/landing", { data: req.user });
+    res.render("bounds/landing");
   } else {
     res.redirect("/login");
   }
