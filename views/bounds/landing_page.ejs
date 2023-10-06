@@ -47,11 +47,15 @@
             />
             <div class="tips row text-center">
               <div class="top col-10">
-                <span class="badge">Admin</span>
-                <span class="title">Manager</span>
+                <%  if(data.admin == true){ %>
+                  <span class="badgeadmin">Admin</span>
+                <% }else{ %>
+                  <span class="badgeuser">Users</span>
+                <% } %>
+                <span class="title"><%=data.position%></span>
               </div>
-              <h3 class="col-12">farouk audu</h3>
-              <p class="col-12">faroukaudu@gmail.com</p>
+              <h3 class="col-12"><%=data.fullname%></h3>
+              <p class="col-12"><%=data.email%></p>
             </div>
           </div>
           <div class="step-block row justify-content-center">
@@ -63,7 +67,11 @@
               >
                 Add User</a
               >
+<<<<<<< HEAD:views/bounds/landing2.ejs
               <a href="#" class="button col-lg-6"> Add Warehouse</a>
+=======
+              <a href="/addstore" class="button col-lg-5"> Add Warehouse</a>
+>>>>>>> 012fa3df11251f5e9454d6bb14c07bfbccfa7492:views/bounds/landing_page.ejs
             </div>
             <a href="#" class="button col-lg-11 mt-5"> Advance Report</a>
           </div>

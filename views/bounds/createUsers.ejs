@@ -1,4 +1,4 @@
-<%- include("../partial/header") -%>
+<%- include("../partial/header",{userInfo:data}); -%>
 <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <div class="ugf-bg ufg-main-container">
@@ -6,26 +6,27 @@
     <div class="row">
       <div class="col-xl-10 offset-xl-1 col-lg-10 offset-lg-1 p-sm-0">
         <div class="covid-wrap">
-          <div class="covid-header offset-lg-2 col-lg-8">
-            <h2>Add User</h2>
-          </div>
           <form action="/addUser" method="post">
             <div
               class="covid-test-wrap ugf-form test-step active offset-lg-2 col-lg-8"
             >
               <div class="step-block">
                 <div class="input-block">
-                  <div class="form-group">
-                    <label for="inputFname">Username</label>
-                    <input
-                      name="realname"
-                      type="text"
-                      class="form-control"
-                      id="inputFname"
-                      placeholder="Peter"
-                    />
-                  </div>
-                  <!-- <div class="form-group">
+                  <div class="row">
+                    <div class="col-md-12 p-sm-0">
+                      <div class="form-group">
+                        <label for="inputFname">Full Name</label>
+                        <input
+                        name="realname"
+                          type="text"
+                          class="form-control"
+                          id="inputFname"
+                          placeholder="Peter Acheme"
+                        />
+                      </div>
+                    </div>
+                    <!-- <div class="col-md-6 p-sm-0">
+                      <div class="form-group">
                         <label for="inputFname">Password</label>
                         <input
                         name="password"
@@ -43,7 +44,7 @@
                       type="email"
                       class="form-control"
                       id="email"
-                      placeholder="Driver Contact"
+                      placeholder="example@goldparklogistics.com"
                     />
                   </div>
                   <div class="form-group">
@@ -75,7 +76,7 @@
                       type="phone"
                       class="form-control"
                       id="email"
-                      placeholder="Driver Contact"
+                      placeholder="08155...."
                     />
                   </div>
 
@@ -114,37 +115,28 @@
             <span aria-hidden="true"><span class="icon-close2"></span></span>
           </a>
 
-          <div class="warp-icon mb-4">
-            <lottie-player
-              src="https://assets9.lottiefiles.com/packages/lf20_wWZd8QJ7Cj.json"
-              background="transparent"
-              speed="1"
-              style="width: 80px; height: 80px"
-              loop
-              autoplay
-            ></lottie-player>
-          </div>
-          <form action="#">
-            <label for="">User Created</label>
-            <p class="mb-4">A mail has been sent to the User</p>
-
-            <div class="d-flex">
-              <div class="mx-auto">
-                <a
-                  href="#"
-                  class="btn btn-primary px-4 py-3"
-                  data-toggle="modal"
-                  data-target="#exampleModalCenter"
-                  >Done</a
-                >
-              </div>
+                <div class="warp-icon mb-4">
+                  <lottie-player src="https://assets9.lottiefiles.com/packages/lf20_wWZd8QJ7Cj.json"  background="transparent"  speed="1"  style="width: 80px; height: 80px;"  loop  autoplay></lottie-player>
+                </div>
+                <form action="#">
+                  <label for="">User Created</label>
+                  <p class="mb-4">A mail has been sent to the User</p>
+                  
+                  <div class="d-flex">
+                    <div class="mx-auto">
+                      
+                    <a href="#" class="btn btn-primary px-4 py-3" data-toggle="modal" 
+                    data-target="#exampleModalCenter">Done</a>
+                    </div>
+                  </div>
+                </form>
+              
             </div>
-          </form>
+
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 <script src="assets/js/jquery.min.js"></script>
 <script src="assets/js/popper.min.js"></script>

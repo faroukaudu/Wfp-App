@@ -288,14 +288,14 @@
   letter-spacing: 1px;
   font-weight: lighter;
   color: #ffffff;
-  font-family: sans-serif;
+  font-family: 'Calibri';
 }
 
 .user-tips .tips {
   font-size: 1.8rem;
   color: #ffffff;
   font-family: "Roboto", sans-serif;
-  margin-bottom: 70px;
+  margin-bottom: 1px;
 }
 .user-tips .tips .top {
   display: flex;
@@ -303,12 +303,19 @@
   justify-content: space-between;
   align-items: center;
 }
-.user-tips .tips .top .badge {
+.user-tips .tips .top .badgeadmin {
   font-size: 15px;
-  padding: 7px 15px;
+  padding: 4px 15px;
   border-radius: 20px;
   background-color: #0f394e;
   color: #ffffff;
+}
+.user-tips .tips .top .badgeuser {
+  font-size: 15px;
+  padding: 4px 15px;
+  border-radius: 20px;
+  background-color: #ffffff;
+  color: #131212;
 }
 .user-tips .tips .top .title {
   font-size: 15px;

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proccessing</title>
+    <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+
+    <style>
+        .center{
+            display:flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 90vh;
+            font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+            font-size: large;
+            /* flex-wrap: wrap; */
+
+        }
+    </style>
+    
+
+    <script>
+        var outputName = "<%= deci%>";
+        if(outputName==="fail"){
+            setTimeout(function() {
+            window.location.href = '/fail';            
+                }, 3000);
+        }else{
+            setTimeout(function() {
+            window.location.href = '/success';            
+                }, 4000);
+
+        }
+
+
+
+
+    </script>
+</head>
+<body >
+   
+
+
+
+
+
+   <div class="center">
+    <div class="item">
+        <lottie-player src="https://assets6.lottiefiles.com/packages/lf20_ulyggahf.json"  background="transparent"  speed="4"  style="width: 400px; height: 400px;"  loop  autoplay></lottie-player>
+
+       </div>
+    <div class="break"></div> <!-- break to a new row -->
+    <div class="item">
+        <p>Generating an Inbound Order</p>
+    </div>
+</div>
+    
+</body>
+</html>

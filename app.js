@@ -5,6 +5,8 @@ const ejs = require("ejs");
 const myExpress = require("./index.js");
 const app = myExpress.mainapp;
 const superadmin = require(__dirname + "/admin/superadmin.js");
+const bounds = require(__dirname + "/admin/in_outbounds.js");
+const create_warehouse = require(__dirname + "/admin/create_warehouse.js");
 
 // app.use(express.static("public"));
 // app.use(bodyParser.urlencoded({ extended: true }));
